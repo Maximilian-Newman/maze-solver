@@ -48,6 +48,7 @@ def initMaze(height, width, pixelsize, data):
     global threads
     global solutions
     global visitedCells
+    turtle.tracer(False)
     visitedCells = []
     solutions = []
     threads = [ [ [0, 0] ] ]
@@ -87,6 +88,8 @@ def initMaze(height, width, pixelsize, data):
                 t.color("light gray")
             rowTurtles.append(t)
         cell_turtles.append(rowTurtles)
+    turtle.update()
+    turtle.tracer(True)
 
 def readCell(x, y): # must say that cells off the map are walls, as well as reading from the data
     global cell_data
